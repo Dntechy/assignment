@@ -13,21 +13,13 @@ new_product = {
 #Send a Post requesst
 response = requests.post(f"{BASE_URL}/products", json=new_product)
 _response = response.json()
-#breakpoint()
-#Not a must to print
-#print(response.json())
+
 
 #Set variables from the response
 product_id = _response["id"]
 product_title = _response["title"]
 
 #Now we go to the browser
-#First pip install selenium
-
-from selenium import webdriver
-
-#driver = webdriver.Chrome('./chromedriver')
-#driver = webdriver.Chrome(executable_path="C:\\browserdrivers\\chromedriver.exe")
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
